@@ -26,7 +26,7 @@
           var title = "";
           $.getJSON(houses[house].url, function(data) {
             $('section').append("<p>House Name: " + data.name + "</p><br>");
-            $('section').append("<p>House Words: " + data.words + "</p><br>");
+            $('section').append("<p>House Words: \"" + data.words + "\"</p><br>");
             title += "Titles: " + data.titles[0];
             for (var i = 1; i < data.titles.length; i ++) {
               title += ", " + data.titles[i];
