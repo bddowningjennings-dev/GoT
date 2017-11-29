@@ -1,0 +1,48 @@
+* {
+  /* outline: 1px dashed red; */
+  padding: 0;
+  margin: 0;
+}
+.wrapper {
+  padding: 100px 30px;
+  width: 1100px;
+}
+header {
+  width: 1100px;
+  padding-left: 110px;
+}
+section {
+  border: 2px solid gray;
+  border-top: none;
+  width: 100%;
+  height: 400px;
+  padding: 20px 30px;
+}
+p, .line {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 25px;
+  margin-bottom: -12px;
+  padding-top: 60px;
+}
+img {
+  display: inline-block;
+  width: 250px;
+  height: 160px;
+  margin-right: 20px;
+}
+.content {
+  margin-left: 155px;
+}
+.content > p {
+  padding-left:  30px;
+  padding-right:  30px;
+}
+.line {
+  width: 10%;
+  height: 15px;
+  border-bottom: 2px  solid gray;
+}
+.right {
+  width: 67.6%;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+ <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Game of Thrones - Houses</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+
+    <script
+			  src="http://code.jquery.com/jquery-3.2.1.js"
+			  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			  crossorigin="anonymous"></script>
+    <script>
+      var houses = {
+        "stark": {"url":"https://anapioficeandfire.com/api/houses/362"},
+        "lannister": {"url":"https://anapioficeandfire.com/api/houses/229"},
+        "baratheon": {"url":"https://anapioficeandfire.com/api/houses/17"},
+        "targaryen": {"url":"https://anapioficeandfire.com/api/houses/378"}
+      };
+      $(document).ready(function() {
+        $('img').click(function() {
+          var house = $(this).attr('class');
+          $('section').html('');
+          var title = "";
+          $.getJSON(houses[house].url, function(data) {
+            $('section').append("<p>House Name: " + data.name + "</p><br>");
+            $('section').append("<p>House Words: \"" + data.words + "\"</p><br>");
+            title += "Titles: " + data.titles[0];
+            for (var i = 1; i < data.titles.length; i ++) {
+              title += ", " + data.titles[i];
+            }
+            $('section').append("<p>"+title+"</p>");
+          })
+        })
+      })
+
+    </script>
+  </head>
+  <body>
+       <div class="wrapper">
+      <header>
+        <img class="baratheon" src="gameofthrones/baratheon.png" alt="baratheon">
+        <img class="lannister" src="gameofthrones/lannister.jpg" alt="lannister">
+        <img class="stark" src="gameofthrones/stark.jpg" alt="stark">
+        <img class="targaryen" src="gameofthrones/targaryen.jpg" alt="targaryen">
+      </header>
+      <div class="content">
+        <div class="line left"></div>
+        <p>House Details</p>
+        <div class="line right"></div>
+        <section>
+          
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
